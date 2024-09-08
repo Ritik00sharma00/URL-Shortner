@@ -11,7 +11,8 @@ This is a URL shortening service built with Node.js, MongoDB, and Express.js. Th
 
 ## API Endpoints
 
-### `/api/register`
+### `/api/register`     
+-{email:""}
 
 - **Description**: Registers a new user and returns a JWT token.
 - **Authentication**: None required.
