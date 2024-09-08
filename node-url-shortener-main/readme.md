@@ -1,82 +1,15 @@
 # Node.js URL Shortener API
-
-This is an URL shortener service like bit.ly or cutt.ly. The front-end is not covered here. The API service can take a long URL and convert it to a shorter URL. MongoDB is used as the database. The long URL, short URL, and other details are stored in the database. When a long URL that is already stored in the database is passed again, it returns the older shortened URL.
-
-## Screenshots
-
-![Working](https://i.ibb.co/y82hQq2/ezgif-com-video-to-gif.gif)
-
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/nemo0/node-url-shortener
-```
-
-Go to the project directory
-
-```bash
-  cd urlShortenerMongo
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run start
-```
-
-## API Reference
-
-### Shorten URL
-
-```http
-  POST /api/short
-```
-
-| Field | Type   | Description  |
-| :---- | :----- | :----------- |
-| Body  | `json` | Original Url |
-
-**Example:**
-
-```http
-POST http://localhost:3333/api/short
-Content-Type: application/json
-
-{
-    "origUrl": "https://nemo.hashnode.dev/an-introduction-to-recursion-using-javascript-ckfgx2nrq001xols17h787f87"
+This is a Url shorten service in  backend. The Tech stack used in Node JS  , MOngo Db, Express JS.
+   '''   The routes used in this are 
+        '''-'/api/register' - applied  Jwt authentication.Just go to the route you wil get the token in response. So here client will get the JWT token.use that in headers to pass the middle wares.
+        '''-'/api/short' - applied To shorten the URL.   
+        {
+        "origUrl":"https://www.youtube.com/watch?v=6kGiElisMFH2exzjBeE_zAHHJOdxg&index=8",
+    "shortUrl":"",     
+    "expiresInDays":2
 }
+shortURl parameter is optional. it is when you give yoour custom mask url.
 
-```
 
-### Get item
 
-```http
-  GET /:id
-```
-
-| Parameter | Type     | Description     |
-| :-------- | :------- | :-------------- |
-| `id`      | `string` | Unique URL Code |
-
-**Example:**
-
-```http
-GET http://localhost:3333/SLiCKEXdn
-```
-
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your `.env` file
-
-| Variable    | Description             |
-| :---------- | :---------------------- |
-| `MONGO_URI` | MongoDB URI             |
-| `BASE`      | Base URL for Shortening |
+Perfectly implemented the radis-cli for caching.
